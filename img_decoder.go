@@ -12,7 +12,6 @@ import (
 type pixel struct {
 	x     int
 	y     int
-	num   int
 	green int
 	red   int
 	blue  int
@@ -80,7 +79,6 @@ func main() {
 			// create array for ESP32 image decoding
 			imageByPixel[iter].x = x
 			imageByPixel[iter].y = y
-			imageByPixel[iter].num = iter
 			imageByPixel[iter].green = int((((1 - a) * g) + (a * g)) / 255) //green decoding into the RGB from RGBA
 			imageByPixel[iter].red = int((((1 - a) * r) + (a * r)) / 255)   //red decoding into the RGB from RGBA
 			imageByPixel[iter].blue = int((((1 - a) * b) + (a * b)) / 255)  //blue decoding into the RGB from RGBA
